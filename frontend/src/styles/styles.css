@@ -200,3 +200,10 @@ a{
   font-size: 18px;
   padding-top: 20px;
 }
+
+.page-cities {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}

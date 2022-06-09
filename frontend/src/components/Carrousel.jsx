@@ -1,5 +1,5 @@
 import Data from '../components/Data.js'
-import '../components/styles.css'
+import '../styles/styles.css'
 
 
 // Import Swiper React components

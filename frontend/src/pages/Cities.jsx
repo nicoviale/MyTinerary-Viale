@@ -1,10 +1,7 @@
 import React from "react";
-import '../components/styles.css'
-
-
+import '../styles/styles.css'
 
 export default function Cities () {
-
 
     return(
         <>
@@ -18,7 +15,6 @@ export default function Cities () {
             <div className="Sorry">
                 <p>Offline for Maintenance</p>
             </div>
-
         </div>
         </>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../components/styles.css';
+import '../styles/styles.css'
 import Button from '@mui/material/Button';
 import {Link as LinkRouter} from "react-router-dom"
 

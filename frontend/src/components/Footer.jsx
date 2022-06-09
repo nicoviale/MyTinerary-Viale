@@ -5,7 +5,7 @@ import logofacebook from '../images/facebook.png';
 import logoinstagram from '../images/instagram.png';
 
 
-import '../components/styles.css';
+import '../styles/styles.css'
 
 
 const Footer = () => {
