@@ -7,6 +7,9 @@ import Footer from './components/Footer.jsx'
 import Index from './pages/Index'
 import Cities from './pages/Cities'
 import Error from './pages/Error'
+import ScrollToTop from "react-scroll-to-top";
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import DetailPage from './pages/DetailPage'
 
 function App() {
   return (
@@ -17,9 +20,15 @@ function App() {
           <Route path="/Index" element={<Index/>}/>
           <Route path="/Home" element={<Index/>}/>
           <Route path="/Cities" element={<Cities/>}/>
+          <Route path="/city/:id" element={<DetailPage/>} />
           <Route path='/*' element={<Error />} />
         </Routes >
         <Footer/>
+        <ScrollToTop
+        smooth
+        viewBox="0 0 24 24"
+        component={<ArrowCircleUpIcon/>}
+      />
     </div>
   )
 }

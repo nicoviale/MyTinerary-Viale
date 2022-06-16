@@ -1,0 +1,205 @@
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 60rem;
+  height: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.swiper-slide {
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: calc((100% - 30px) / 2) !important;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+
+
+.Body{
+  background-image: url(https://elplanetaurbano.com/wp-content/uploads/2021/01/billetes-avion-viajes-tarifas-comparacion-precios-ahorro-compra-vuelos-bbva-1024x683-1.jpg);
+  height: 600px;
+  display: flex;
+  background-image: no-repeat;
+  background-size: cover;
+  background-position-y: 52%;
+}
+
+
+.Titulo{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+      font-weight: 400;
+      font-family: Helvetica, Arial, sans-serif;
+}
+
+.conteiner-card{
+  display: flex;
+  justify-content: 'center';
+  background-color: rgb(64, 100, 179);
+
+
+}
+
+
+.footer-section {
+  background-color: #131314;
+
+  width: 100%;
+  justify-self: flex-end;
+
+}
+
+.footer-section footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.foot-tools {
+  width: 97%;
+  padding: 2vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.foot-copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: rgb(253, 253, 253);
+  height: 8vh;
+  font-size: 1.2rem;
+}
+div.social-container {
+  width: 25%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+div.social-text h2 {
+  color: rgb(37 104 227);
+  list-style-type: none;
+  text-align: center;
+  font-weight: 400;
+  font-size: 28px;
+  padding-top: 9px;
+}
+
+.social-images {
+  display: flex;
+  width: 7rem;
+  /* height: 100%; */
+  align-self: center;
+}
+
+.three-social {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.three-social img {
+  margin: 1vw;
+  cursor: pointer;
+}
+li:not(.carousel-indicators li) {
+  color: rgb(37 104 227);
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-99px);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 28px;
+}
+
+
+
+
+
+.foot-navbar {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.sapp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.country{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.Cityname{
+  width:100%;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  text-align: center;
+  font-family:"Rajdhani",sans-serif;
+  font-size: 3vh;
+  font-weight: 700;
+}
+.contacto{
+  color: white;
+  font-size: 2vh;
+  transform: translateX(-99px);
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding-top: 20px;
+}
+ul{
+  color: black;
+}

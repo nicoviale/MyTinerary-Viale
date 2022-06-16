@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url(https://img.freepik.com/foto-gratis/olas-oceano-o-mar-playa-tropical-fondo-viajes-vacaciones-paisaje-al-atardecer-paisaje-amanecer_265223-4143.jpg?w=2000);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .App-logo {

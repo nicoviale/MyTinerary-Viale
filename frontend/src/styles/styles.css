@@ -56,15 +56,38 @@ body {
   background-position-y: 52%;
 }
 
-
+.conteiner-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 18rem;
+  padding-bottom: 21rem;
+}
 .Titulo{
-     display: flex;
-     align-items: center;
-     justify-content: center;
-      font-weight: 400;
-      font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 3rem;
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+  text-shadow: 0 0 5px black;
 }
 
+.buttonletsgo{
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+}
+
+.subtitulo{
+  color: #fff;
+  font-family: "Rajdhani",sans-serif;
+  padding-top: 1vh;
+  font-weight: 500;
+  font-size: 2rem;
+  text-shadow: 0 0 5px black;
+}
 .conteiner-card{
   display: flex;
   justify-content: 'center';
@@ -76,7 +99,9 @@ body {
 
 .footer-section {
   background-color: #131314;
-
+display: flex;
+flex-direction: row;
+    flex-wrap: wrap;
   width: 100%;
   justify-self: flex-end;
 
@@ -93,11 +118,16 @@ body {
   width: 97%;
   padding: 2vh;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: row;
 }
 
+
 .foot-copy {
+  font-family: "Rajdhani",sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +138,9 @@ body {
 }
 div.social-container {
   width: 25%;
-
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+  font-size: 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,7 +152,6 @@ div.social-text h2 {
   color: rgb(37 104 227);
   list-style-type: none;
   text-align: center;
-  font-weight: 400;
   font-size: 28px;
   padding-top: 9px;
 }
@@ -138,7 +169,7 @@ div.social-text h2 {
   width: 50%;
 }
 
-.three-social img {
+.three-social  {
   margin: 1vw;
   cursor: pointer;
 }
@@ -150,7 +181,54 @@ li:not(.carousel-indicators li) {
   justify-content: center;
   align-items: center;
   transform: translateX(-99px);
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.titulos-footer{
+  color: rgb(37 104 227);
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-99px);
+    font-family: "Rajdhani",sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+}
+.navigate{
+  color: rgb(37 104 227);
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 99px;
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  transform: translateX(-25px);
+}
+.MuiTypography-h5 {
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+
+
+}
+
+.socialnet{
+  color: rgb(37 104 227);
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-13px);
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
   font-size: 28px;
 }
 
@@ -190,15 +268,24 @@ li:not(.carousel-indicators li) {
 }
 .contacto{
   color: white;
-  font-size: 2vh;
+  font-size: 3vh;
   transform: translateX(-99px);
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 500;
 }
-
+.css-6r96su-MuiButtonBase-root-MuiButton-root{
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+    font-size: 3vh;
+}
 a{
+  font-family: "Rajdhani",sans-serif;
   text-decoration: none;
   color: white;
   font-size: 18px;
   padding-top: 20px;
+  font-weight: 700;
+  font-size: 3vh;
 }
 
 .page-cities {
@@ -206,4 +293,95 @@ a{
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+.text-carrousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+    font-size: 6vh;
+}
+.card{
+ height: 600px;
+ font-family: "Rajdhani",sans-serif;
+ 
+}
+.cardadasdas{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 82%);
+  background-color: white;
+  width: 45%;
+    margin: 1.5vh;
+    border: none;
+    height: 40vh;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+img{
+  width: 45%;
+  background-size: cover;
+}
+
+
+.Tarjetas{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+.fondocities{
+  background-image: url(https://fondosmil.com/fondo/36779.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.titulo-cities{
+  font-family: "Rajdhani",sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 7vh;
+  margin: 30px;
+}
+
+.conteiner-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-detail{
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+  font-size: 7vh;
+}
+
+.conteiner{
+  font-family: "Rajdhani",sans-serif;
+}
+
+.carrou{
+flex-wrap: wrap;
+flex-direction: row;
+}
+
+.link{
+  font-family: "Rajdhani",sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding-top: 20px;
+    font-weight: 700;
+    font-size: 3vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
 }

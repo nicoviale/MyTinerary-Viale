@@ -5,9 +5,11 @@ import Body from '../components/Body';
 
 export default function Index() {
     return (
-        <>
-            <Body />
+       <>
+            <Body/>
+            <div className='carrou'>
             <Carrousel />
+        </div>
         </>
     )
 }

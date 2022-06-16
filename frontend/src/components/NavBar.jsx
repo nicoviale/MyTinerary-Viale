@@ -16,8 +16,9 @@ import logo from '../images/GrisTextura.png'
 import user from '../images/user.png'
 
 
+
 const pages = ['Home', 'Cities'];
-const settings = [ 'SignIn', 'Logout'];
+const settings = [ 'SignInSignInSignInSignIn', 'Logout'];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -91,7 +92,7 @@ const NavBar = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 <LinkRouter to={page}> {page} </LinkRouter>
               </Button>
@@ -101,7 +102,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <img src={user} alt="Imagen user" style={{ width: "50px" }} />
+              <img src={user} alt="Imagen user" style={{ width: "50px"}} />
               </IconButton>
             </Tooltip>
             <Menu
