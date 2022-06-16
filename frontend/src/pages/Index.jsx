@@ -1,13 +1,15 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
 import Carrousel from '../components/Carrousel';
+import Body from '../components/Body';
 
 
 export default function Index() {
     return (
-        <>
-        <NavBar />
-        <Carrousel />
+       <>
+            <Body/>
+            <div className='carrou'>
+            <Carrousel />
+        </div>
         </>
     )
 }

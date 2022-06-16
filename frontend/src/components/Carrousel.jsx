@@ -1,5 +1,5 @@
 import Data from '../components/Data.js'
-import '../components/styles.css'
+import '../styles/styles.css'
 
 
 // Import Swiper React components
@@ -40,7 +40,7 @@ export default function Carrousel() {
       >
 
         {Data.map(e=> <SwiperSlide className='conteiner-card' key={e.id}>
-          <img className='country' src={e.img} alt={e.className}/>
+          <img className='country' src={e.imagen} alt={e.className}/>
           <div className='Cityname'>{e.name}</div>
         </SwiperSlide>
         )}
