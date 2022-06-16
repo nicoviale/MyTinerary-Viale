@@ -28,7 +28,7 @@ console.log(city)
 
 return (
     <div className="conteiner-details">
-   <Card sx={{ maxWidth: 350 }} className="card" sx={{width:"450px",height: "800px",margin:"20px"}}>
+   <Card sx={{ maxWidth: 350,width:"450px",height: "800px",margin:"20px" }} className="card">
     <CardMedia
           component="img"
           height="300"
