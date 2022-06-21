@@ -21,7 +21,7 @@ function Cities (){
     return(
         <div className='fondocities'>
         <div className='conteiner-buscador'>
-            <p className='titulo-cities'>Cities</p>
+            <p className='titulo-cities'>Find your city!</p>
             <Input onKeyUp={(evento)=>{setInputSearch(evento.target.value)}} placeholder="Search cities" css={{marginTop:'1.5rem'}}></Input>
         </div>
         <div className='Tarjetas'>

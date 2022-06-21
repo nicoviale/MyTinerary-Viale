@@ -14,11 +14,11 @@ import MenuItem from '@mui/material/MenuItem';
 
 import logo from '../images/GrisTextura.png'
 import user from '../images/user.png'
-
+import '../styles/styles.css'
 
 
 const pages = ['Home', 'Cities'];
-const settings = [ 'SignInSignInSignInSignIn', 'Logout'];
+const settings = [ 'SignIn', 'Logout'];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -123,7 +123,7 @@ const NavBar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center" padding="5">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
