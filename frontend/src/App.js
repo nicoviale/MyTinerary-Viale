@@ -1,17 +1,27 @@
 import './App.css'
-import NavBar from './components/NavBar.jsx'
+import NavBar from './components/NavBar.jsx';
 
-import "swiper/css/bundle"
-import {Route, Routes } from 'react-router-dom'
-import Footer from './components/Footer.jsx'
-import Index from './pages/Index'
-import Cities from './pages/Cities'
-import Error from './pages/Error'
+import "swiper/css/bundle";
+import {Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer.jsx';
+import Index from './pages/Index';
+import Cities from './pages/Cities';
+import Error from './pages/Error';
 import ScrollToTop from "react-scroll-to-top";
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
-import DetailPage from './pages/DetailPage'
+import DetailPage from './pages/DetailPage';
+import {useEffect} from "react";
+import citiesActions from './redux/actions/citiesActions';
+import {useDispatch} from 'react-redux';
 
 function App() {
+
+  const dispatch = useDispatch()
+  useEffect (()=>{
+    dispatch(citiesActions.getCities())
+    // eslint-disable-next-line
+  },[]);
+  
   return (
     <div className="App">
       <NavBar/>
@@ -33,4 +43,5 @@ function App() {
   )
 }
 
-export default App
+
+export default App;

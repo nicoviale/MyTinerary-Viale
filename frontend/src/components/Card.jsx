@@ -19,7 +19,7 @@ import 'typeface-rajdhani'
             <div className='conteiner'>
                 <Grid container spacing={3}>
                     <Grid item xs={3}>
-               <Card sx={{ maxWidth: 350,width:"351px",height: "400px",margin:"10px" }} className="card">
+               <Card sx={{ maxWidth: 340,width:"300px",height: "400px",margin:"20px",}} className="card">
         <CardMedia
           component="img"
           height="250"

@@ -54,6 +54,7 @@ body {
   background-image: no-repeat;
   background-size: cover;
   background-position-y: 52%;
+  
 }
 
 
@@ -73,6 +74,14 @@ body {
 
 }
 
+.conteiner-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 12rem;
+  padding-bottom: 21rem;
+}
 
 .footer-section {
   background-color: #131314;
@@ -202,4 +211,77 @@ a{
 }
 ul{
   color: black;
+}
+.conteiner-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 50px;
+}
+.Contenedor-Iti{
+  display: flex;
+  position: relative;
+  width: 65vw;
+  min-height: 50vh;
+  margin-top: 10vh;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: .5s;
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 33%);
+  overflow: hidden;
+  background-color: white;
+  font-family: "Rajdhani",sans-serif;
+}
+.name-iti{
+  font-size: 40px;
+}
+.description-iti{
+  font-size: 20px;
+   font-weight: 500;
+}
+.info-iti{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:last-of-type{
+  width: 136vh;
+}
+.hashtags-iti{
+  font-size: 20px;
+  font-weight: 500;
+}
+.css-h93ljk-MuiTypography-root{
+  font-family: "Rajdhani",sans-serif;
+}
+.css-1pnmrwp-MuiTypography-root{
+  font-family: "Rajdhani",sans-serif;
+}
+.css-h93ljk-MuiTypography-root {
+  margin: 0;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+  margin-bottom: 0.35em;
+  font-family: "Rajdhani",sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.Tarjetas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

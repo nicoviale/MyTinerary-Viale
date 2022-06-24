@@ -1,0 +1,112 @@
+{
+    "data": [
+
+                {
+                    "name": "Beach Tour",
+                    "author": "Davina Carr",
+                    "authorimage": "https://images.generated.photos/rUMRsl7qZKFFIiELzsgoVsnJ3ryQsdFuDH6hc9jpSyQ/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MzcyNjAzLmpwZw.jpg",
+                    "description": "Rio de Janeiro beach tour.",
+                    "price":"💵💵",
+                    "duration":"1hs 30min",
+                    "hashtags":"#travel, #summer, #ocean",
+                    "likes":"2",
+                    "activities":"",
+                    "city":"62a9fe4d29c2731393391a68"
+                },
+                {
+                    "name": "City Tour",
+                    "author": "Gus Calderon",
+                    "authorimage": "https://images.generated.photos/Qdn-aGASBDKdx2vroJXF5e10qGu_XUUEiclEYBjjrCA/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTQ2NTc2LmpwZw.jpg",
+                    "description": "Accommodations in Rio de Janeiro cover as diverse a spectrum as the city itself. At the top end, you can find plenty of luxury hotels along the beaches of Zona Sul, the city's southern zone, which includes the renowned Copacabana and Ipanema beaches. For something to suit a budget, but with good beach access, look around the less crowded neighborhoods of Catele and Flamengo. If you want to stay as centrally as possible, without feeling like you're in a business district, look for lodgings in the colorful, bohemian neighborhood of Santa Teresa.",
+                    "price":"💵💵💵",
+                    "duration":"4hs",
+                    "hashtags":"#brazil, #tour, #riodejaneiro",
+                    "likes":"6",
+                    "activities":"",
+                    "city":"62a9fe4d29c2731393391a68"
+                },
+                {
+                "name": "Paris Tour",
+                "author": "Charly Eastwood",
+                "authorimage": "https://images.generated.photos/bXhvTHA9EgUey4eZqJY1nchuFqHbU64jVBydO5Qx9Cs/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTUxMDY1LmpwZw.jpg",
+                "description": "Eiffel Tower",
+                "price":"💵💵",
+                "duration":"3hs",
+                "hashtags":"#paris, #art, #eiffeltower",
+                "likes":"2",
+                "activities":"",
+                "city":"62aa210521950a1c9c4b2736"
+                },
+                {
+                    "name": "Paris Museum Tour",
+                    "author": "Nel Cuevas",
+                    "authorimage": "https://images.generated.photos/UdhSkh8roMaESO5PrAd0n1Yt_039EvLt_t7Etx0b1bA/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODUxNjMwLmpwZw.jpg",
+                    "description": "Eiffel Tower",
+                    "price":"💵💵",
+                    "duration":"5hs",
+                    "hashtags":"#paris, #museum, #city",
+                    "likes":"1",
+                    "activities":"",
+                    "city":"62aa210521950a1c9c4b2736"
+                    },
+                    {
+                        "name": "Rome Tour",
+                        "author": "Patrycja Russo",
+                        "authorimage": "https://images.generated.photos/CUlk3ZDCWG1TnBORMLDI-n12CcIVLEiPH_zkD1g0Sc4/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTU3ODY3LmpwZw.jpg",
+                        "description": "Colosseum",
+                        "price":"💵",
+                        "duration":"1hs",
+                        "hashtags":"#rome, #Colosseum, #city",
+                        "likes":"6",
+                        "activities":"",
+                        "city":"62aa22cf21950a1c9c4b2741"
+                        },
+                    {
+                            "name": "Rome Tour",
+                            "author": "Patrycja Russo",
+                            "authorimage": "https://images.generated.photos/CUlk3ZDCWG1TnBORMLDI-n12CcIVLEiPH_zkD1g0Sc4/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTU3ODY3LmpwZw.jpg",
+                            "description": "Piazza Navona",
+                            "price":"💵",
+                            "duration":"1hs",
+                            "hashtags":"#rome, #Piazza, #city",
+                            "likes":"4",
+                            "activities":"",
+                            "city":"62aa22cf21950a1c9c4b2741"
+                    },
+                    {
+                        "name": "Perito Moreno",
+                        "author": "Nathaniel Kaufman",
+                        "authorimage": "https://images.generated.photos/CUlk3ZDCWG1TnBORMLDI-n12CcIVLEiPH_zkD1g0Sc4/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTU3ODY3LmpwZw.jpg",
+                        "description": "Enjoy breathtaking views of some of the world's most spectacular ice fields at Perito Moreno Glacier. The expansive national park, which shares a border with Chile, contains 47 glaciers, with 30 percent of its total area covered by ice.",
+                        "price":"💵",
+                        "duration":"1hs",
+                        "hashtags":"#argentine, #ice, #glacier",
+                        "likes":"4",
+                        "activities":"",
+                        "city":"62aa234421950a1c9c4b2743"
+                },
+                {
+                    "name": "Miami Tour",
+                    "author": "Emmanuella Owen",
+                    "authorimage": "https://images.generated.photos/1NXNJlEkuUZERLjHd6MDbGBUqwau-p04_khDrT0vJmU/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NDQyMDkyLmpwZw.jpg",
+                    "description": "Miami's South Beach boasts one of the largest collections of boutique hotels in the country. Though it can be quite expensive, staying in this area ensures proximity to the city's best shoreline, clubs, shopping, and restaurants, not to mention Art Deco buildings.",
+                    "price":"💵💵💵",
+                    "duration":"4hs",
+                    "hashtags":"#miami, #shopping, #tour",
+                    "likes":"7",
+                    "activities":"",
+                    "city":"62aa238121950a1c9c4b2745"
+            },
+            {
+                "name": "Peru Machu Picchu",
+                "author": "Christie Bradford",
+                "authorimage": "https://images.generated.photos/wBFDaBA4d_-cWofkoBF0rQePWXZdjI177d8nMmzw3dY/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODE0Mzc2LmpwZw.jpg",
+                "description": "Visitors to Machu Picchu won't find much in the way of accommodations on the site itself. In fact, there's only one hotel located there, a rather pricey one that sits right by the ticket booths. Many of those who come to see the ruins stay in the nearby town.",
+                "price":"💵💵",
+                "duration":"7hs",
+                "hashtags":"#peru, #treking, #tour",
+                "likes":"4",
+                "activities":"",
+                "city":"62aa23ce21950a1c9c4b2747"
+        }
+                ]}
