@@ -45,7 +45,7 @@ console.log(itinerary)
 return (
     <div className="conteiner-details">
 
-   <Card sx={{ maxWidth: "660px",width:"660px",height: "600px",margin:"10px" }} className="card-detail">
+   <Card sx={{ maxWidth: "400px",width:"600px",height: "600px",margin:"10px" }} className="card-detail">
     <CardMedia
           component="img"
           height="300"

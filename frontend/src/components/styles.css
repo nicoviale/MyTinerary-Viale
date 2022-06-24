@@ -285,3 +285,7 @@ ul{
   justify-content: center;
   align-items: center;
 }
+
+.swiper-slide{
+  width: 336px;
+}
