@@ -33,11 +33,6 @@ export default function DetailPages () {
     // eslint-disable-next-line
   },[]);
 
- //   {axios.get(`http://localhost:4000/api/cities/${id}`)
- //   .then(response=>(setCity(response.data.response.city)))
-   // },[id])
-//console.log(id)
-//console.log(city)
 const city = useSelector((store) => store.citiesReducer.getOneCity);
 console.log(city)
 const itinerary = useSelector((store) => store.itinerariesReducer.readItineraries);
@@ -64,7 +59,6 @@ return (
           </Typography>
         </CardContent>
         <CardActions>          
-  {/*  {itineraries.length > 0 ? <Itinerary.map(itinerary => key=(itinerary._id) data={itineraries}/> : <p>NO ITINERARIES</p>} */}
         <LinkRouter to={`/cities`}>
           <Button className='button-card' size="small">Back To Cities</Button>
           </LinkRouter>

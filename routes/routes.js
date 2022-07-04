@@ -1,7 +1,8 @@
 const Router = require('express').Router()
 const citiesControllers = require('../controllers/citiesControllers')
-
-
+const userControllers = require('../controllers/userControllers')
+const {signUpUsers,signInUser} = userControllers;
+const validator = require('../config/validator')
 
 const {getCities, getOneCity, addCity,modifyCity,multiplesCities, removeCity} =citiesControllers;
 
@@ -22,6 +23,9 @@ Router.route("/multiplesCities")
 
 //rutas itineraries
 const itinerariesControllers = require ('../controllers/itinerariesControllers');
+const sendVerification = require('../controllers/sendEmail');
+ const {verifyToken,verifyMail,signOut} = require('../controllers/userControllers');
+ const passport = require ('../config/passport')
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItineraries, getItinerariesByCity} =itinerariesControllers;
 Router.route ('/itinerary')
 .get(getItineraries)
@@ -38,9 +42,21 @@ Router.route("/multiplesItinerary")
 Router.route("/itinerariesbyCity/:id")
 .get(getItinerariesByCity)
 
+Router.route("/auth/signUp")
+.post(validator, signUpUsers)
+Router.route("/auth/signIn")
+.post(signInUser)
 
+/* Router.route("/verify/:string")
+.get(sendVerification) */
 
+Router.route("/auth/signOut")
+.post(signOut)
 
+Router.route("/verify/:string")
+.get(verifyMail)
 
+ Router.route('/auth/verifyToken')
+.get(passport.authenticate('jwt', {session:false}), verifyToken)
 
 module.exports= Router

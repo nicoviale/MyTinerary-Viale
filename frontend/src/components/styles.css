@@ -158,9 +158,10 @@ li:not(.carousel-indicators li) {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  transform: translateX(-1px);
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 28px;
+  text-decoration: none;
 }
 
 
@@ -208,6 +209,7 @@ a{
   color: white;
   font-size: 18px;
   padding-top: 20px;
+  transform: translateX(-99px);
 }
 ul{
   color: black;
@@ -288,4 +290,8 @@ ul{
 
 .swiper-slide{
   width: 336px;
+}
+.container-signup{
+background-color: white;
+margin: 40px;
 }
