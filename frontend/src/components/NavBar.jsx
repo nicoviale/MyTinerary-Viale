@@ -56,9 +56,8 @@ const NavBar = () => {
     setAnchorElUser(null);
   };
 
-  async function signOut() {
-    await dispatch(userActions.signOut())
-      .then(navigate("/",{replace:true}))
+  function signOutClick() {
+    dispatch(userActions.signOutUser())
   }
 
   return (
@@ -166,7 +165,7 @@ const NavBar = () => {
                 <Box>
                   <LinkRouter to={`/profile/${user.user.id}`}>
                     <MenuItem sx={{'&:hover': {bgcolor: 'rgb(224,224,224)'}}} onClick={handleCloseUserMenu}>
-                      <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: 'rgb(2,0,3)'}}>{user.user.nameUser.charAt(0).toUpperCase()+user.user.nameUser.slice(1).toLowerCase()}</Typography>
+                      <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: 'rgb(2,0,3)'}}>{user.user.firstName.charAt(0).toUpperCase()+user.user.firstName.slice(1).toLowerCase()}</Typography>
                     </MenuItem>
                   </LinkRouter>
                   <MenuItem sx={{'&:hover': {bgcolor: 'rgb(224,224,224)'}}} onClick={handleCloseUserMenu}>

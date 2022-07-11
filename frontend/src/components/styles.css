@@ -129,7 +129,7 @@ div.social-text h2 {
   color: rgb(37 104 227);
   list-style-type: none;
   text-align: center;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 28px;
   padding-top: 9px;
 }
@@ -202,6 +202,7 @@ li:not(.carousel-indicators li) {
   color: white;
   font-size: 2vh;
   transform: translateX(-99px);
+  font-weight: 600;
 }
 
 a{
@@ -209,7 +210,7 @@ a{
   color: white;
   font-size: 18px;
   padding-top: 20px;
-  transform: translateX(-99px);
+  transform: translateX(0px);
 }
 ul{
   color: black;
@@ -241,6 +242,7 @@ ul{
   overflow: hidden;
   background-color: white;
   font-family: "Rajdhani",sans-serif;
+  padding: 17px;
 }
 .name-iti{
   font-size: 40px;
@@ -255,6 +257,7 @@ ul{
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
+  padding:20px;
 }
 .css-1elwnq4-MuiPaper-root-MuiAccordion-root:last-of-type{
   width: 136vh;
@@ -294,4 +297,49 @@ ul{
 .container-signup{
 background-color: white;
 margin: 40px;
+}
+.fitImg {
+  width: 250px;
+  height: 200px;
+  object-fit: cover !important;
+}
+.relativeactivities{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: 'center';
+  margin-left: '16px';
+  margin-right: '16px'
+}
+.link{
+  text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding-top: 20px;
+    transform: translateX(-96px);
+}
+.login-button-box{
+  font-size: 25px;
+  font-weight: 800;
+}
+.comments{
+  font-size: 30px;
+  font-weight: 800;
+}
+.view{
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 33%);
+}
+.text-carrousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rajdhani",sans-serif;
+  font-weight: 700;
+  font-size: 6vh;
+  text-shadow: 0 3px 1px white;
+}
+.comment-box{
+  box-shadow: 0px 2px 6px black;
+  border:5px black;
 }

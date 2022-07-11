@@ -38,7 +38,7 @@ const itinerarisControllers ={
             itineraries = await Itinerary.findOne({ _id: id })
         } catch (err) {
             error = err
-        }
+        } 
         res.json({
             response: error ? 'ERROR' : { itineraries },
             success: error ? false : true,
@@ -91,7 +91,7 @@ const itinerarisControllers ={
         let itineraries
         let error = null
         try{
-            itineraries = await Itinerary.find().populate("city")
+            itineraries = await Itinerary.find()
         } catch (err) {error = err}
         res.json({
             response: error ? 'ERROR' : (itineraries), 
@@ -116,18 +116,51 @@ const itinerarisControllers ={
     },
     getItinerariesByCity: async (req,res) => {
         const id = req.params.id
-        let itineraries
+        let itineraries;
         let error = null
         try {
-            itineraries = await Itinerary.find({ city : id }).populate("city")
+            itineraries = await Itinerary.find({ city : id }).populate('activities').populate("comments.userId",{firstName:1, photo:1})
         } catch (err) {
             error = err
         }
         res.json({
             response: error ? 'ERROR' : {itineraries},
+            console:console.log(error),
             success: error ? false : true,
             error: error
         })
     },
+    likeDislike: async (req,res) => {
+        //console.log(req)
+        let id = req.params.id 
+        /* console.log(req.params) */
+        let user = req.user.id
+        /* console.log(user) */
+        try { 
+            let tinerary = await Itinerary.findOne({_id:id})
+            console.log(tinerary) 
+            if (tinerary.likes.includes(user)) {
+                tinerary.likes.remove(user) 
+                await tinerary.save()
+                res.json({
+                    message:"You have just disliked this itinerary",
+                    success: true
+                })
+            } else {
+                tinerary.likes.push(user) 
+                await tinerary.save()
+                res.json({
+                    message:"You have just liked this itinerary",
+                    success: true
+                })
+            }
+        } catch (error) {
+            console.log(error)
+            res.json({
+                message: "error",
+                success: false,
+            })
+        }
+    }, 
 }
 module.exports = itinerarisControllers

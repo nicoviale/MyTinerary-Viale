@@ -53,9 +53,9 @@ signInUser: (logedUser) => {
                     title:'Error',
                     text: res.data.message,
                 })
-                dispatch({type: 'USER', payload: res.data.response})
+                dispatch({type: 'user', payload: res.data.response.userData})
             } else {
-                dispatch({type: 'MESSAGE',
+                dispatch({type: 'message',
                     payload: {                        
                         view: true,
                         message: res.data.message,
@@ -71,11 +71,10 @@ signInUser: (logedUser) => {
 },
 
 signOut: (email) => {
-    return async (dispatch, getState) => {
-          await axios.post('http://localhost:4000/api/auth/signOut',{email}) 
+    return async (dispatch, getState) =>{
         localStorage.removeItem('token')
         dispatch({
-            type: 'USER',
+            type: 'user',
             payload: null
         })
     }
@@ -89,11 +88,11 @@ verifyToken: (token) => {
         .then(user =>{if
             (user.data.success) {
                 dispatch({
-                    type: 'USER',
+                    type: 'user',
                     payload: user.data.response
                 })
                 dispatch({
-                    type: 'MESSAGE',
+                    type: 'message',
                     payload: {
                         view: true,
                         message: user.data.message,
@@ -107,7 +106,7 @@ verifyToken: (token) => {
         ).catch(error => {
             if(error.response.status === 401)
                 dispatch({
-                    type: 'MESSAGE',
+                    type: 'message',
                     payload: {
                         view: true,
                         message: "Your token is expired, please sign in again",

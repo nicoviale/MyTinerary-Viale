@@ -67,7 +67,7 @@ export default function SignUp() {
       console.log(userData)
       const res= dispatch(userActions.signUpUser(userData)) 
       if (res.success) {
-        navigate('/SignIn')
+        navigate('/')
       }
       event.target[0].value = ""
       event.target[2].value = ""
