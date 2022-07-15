@@ -41,7 +41,7 @@ export default function Activity ({activities}) {
                         marginLeft: '16px',
                         marginRight: '16px'}}>
                         <img src={`${a.image}`} alt={a.title} className='fitImg' />
-                        {console.log(activities)}
+                        {/* {console.log(activities)} */}
                     </Box>
                 </div>
             )}

@@ -22,7 +22,7 @@ const userControllers = {
                     })
                 } else {
                     const passwordHasheada = bcryptjs.hashSync(password, 10)
-                    userExist.imageUser = imageUser
+                    userExist.photo = photo
                     userExist.verification = true
                     userExist.from.push(from)
                     userExist.password.push(passwordHasheada)
@@ -44,8 +44,8 @@ const userControllers = {
                         photo,
                         country,
                         from: [from],
-                        uniqueString,
-                        verification: false,                      
+                        uniqueString: uniqueString,
+                        verification,                      
                                                 
                         
                     })
@@ -78,9 +78,106 @@ const userControllers = {
             }
         },
 
+        signInUser: async (req, res) => {
+            const { email, password, from } = req.body.data;//
+            try {
+              const userExist = await User.findOne({ email }); //buscamos por email en bd y si existe lo guardamos en eserExist
+              //const indexPass = userExist.from.indexOf(from);
+              if (!userExist) {
+                res.json({//si no existe el usuario
+                  success: false,
+                  from:from,
+                  message: "User does not exist, please signup",
+                });
+              } else if (userExist.verification) { //si existe la verificacion del usuario
+                let passwordMatch = userExist.password.filter((pass) =>//desencripta y compara
+                    bcryptjs.compareSync(password, pass)//conpareSync la verifica alas contraseñas
+                  );
+                  //filtramos en el array de contraseñas hasheadas si coincide la contraseña
+                  if (from === "form-Signup") {
+                    if(passwordMatch.length > 0){//si coincide
+                      const userData = {//en userDta guardo lo que necesito
+                        id: userExist._id,//estos datos vienen de bd que los traigo en userExist
+                        lastName: userExist.lastName,
+                        firstName: userExist.firstName,
+                        email: userExist.email,
+                        photo: userExist.photo,
+                        country: userExist.country,
+                        from: userExist.from,
+                    };
+                    await userExist.save(); //sing es un metodo:firma una secuencia de comandos almacenada en una cadena
+                    const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { //creo el token, le paso los datos, el secret key y cuando expira
+                      expiresIn: 1000 * 60 * 60 * 24,//el metodo sing /userdata es el payload/secretKey 
+                    });
+                    //console.log(token)
+                    res.json({
+                      response: { token, userData },//llega a userAction
+                      success: true,
+                      from: from,
+                      message: "Welcome " + userData.firstName + userData.lastName,
+                    });
+                  }else {
+                  //si no hay coincidencias
+                    res.json({
+                      success: false,
+                      from: from,
+                      message:`verify your password!`,
+                    });
+                  }
+                }else {
+                  //si fue registrado por redes sociales
+                  
+                  if (passwordMatch.length >= 0) {//*borre el >= //hay coincidencias
+                    const userData = {
+                      id: userExist._id,
+                      lastName: userExist.lastName,
+                      firstName: userExist.firstName,
+                      email: userExist.email,
+                      password: userExist.password,
+                      photo: userExist.photo,
+                      country: userExist.country,
+                      from: userExist.from,
+                    };
+                    await userExist.save();
+                    const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, {
+                      expiresIn: 1000 * 60 * 60 * 24, 
+                    });
+                    res.json({
+                      response: { token, userData },//llega a userAction
+                      success: true,
+                      from: from,
+                      message: "Welcome back " + userData.firstName + userData.lastName,
+                    });
+                  } else {
+                    //si no hay coincidencias
+                    res.json({
+                      success: false,
+                      from: from,
+                      message: 'verify your mail or password!'
+                    });
+                  }
+                }
+              }else { 
+                 //si está registrado PERO el usuario NO FUE VALIDADO
+                res.json({
+                  success: false,
+                  from: from,
+                  message: `validate your account`,
+                });
+              }
+            } catch (error) {
+              console.log(error);
+              res.json({
+                success: false,
+                from:from,
+                message: "Something went wrong. Try again in a few seconds",
+                
+              });
+            }
+          },
 
 
-    signInUser : async (req, res) =>{
+    /* signInUser : async (req, res) =>{
         const {email, password, from} = req.body.logedUser
         try{
             const userExist = await User.findOne({ email })
@@ -91,7 +188,7 @@ const userControllers = {
                     message:"Your user has not been registered,please signup"})
             } else{
                 
-                if(from !== "form-signup"){
+                if(from !== "form-signup"){ //inicio de sesion con google//
                     let passwordMatch = userExist.password.filter(pass => bcryptjs.compareSync(password,pass))
                     if (passwordMatch.length > 0){
                         const userData = {
@@ -118,7 +215,7 @@ const userControllers = {
                             message: "you haven't registered with " + from + " if you want to enter you must make the signUp " + from
                         })
                     }
-                } else {
+                } else { //inicio por formulario
                      let passwordMatch = userExist.password.filter(pass => bcryptjs.compareSync(password,pass))
                     if (passwordMatch.length > 0){
                         const userData = {
@@ -155,7 +252,7 @@ catch (error){
             message: "something has gone wrong in a few minutes"
         })
     }
-},
+}, */
 verifyMail: async (req, res) => {
     const {string} = req.params
     const user = await User.findOne({uniqueString: string})

@@ -4,38 +4,43 @@ import {useDispatch} from 'react-redux'
 import {IconButton} from '@mui/material'
 import GoogleIcon from '@mui/icons-material/Google'
 import userActions from '../redux/actions/userActions'
-
+import {useNavigate} from 'react-router-dom'
 
 export default function GoogleSignUp() {
     
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
+    
     async function handleCallbackResponse(response) {
         console.log(response.credential)
-        let userObject = jwt_decode(response.credential)
+        let userObject = jwt_decode(response.credential);
         //console.log(userObject)
-        dispatch(userActions.signUpUser({
-            email: userObject.email, 
+        const userData ={
             firstName: userObject.given_name,
-            lastName: userObject.family_name, 
+            lastName: userObject.family_name,
+            email: userObject.email, 
             photo: userObject.picture, 
-            password: userObject.sub, 
+            password: userObject.sub,
+            country:'Argentina',
             from: 'google'
-        }))
-    }
+        }
+        const res = await dispatch(userActions.signUpUser(userData))
+        if(res.data.success){
+            navigate('/login')
+        }}
 
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
-            client_id: '405711954042-f8r03ad637h562982h0iele942qg6lfg.apps.googleusercontent.com',
+            client_id: '639195332530-2igeumf6ko9hqaagnl1b676h8nqdhl3g.apps.googleusercontent.com',
             callback: handleCallbackResponse
         });
 
         google.accounts.id.renderButton(
             document.getElementById('buttonDiv'),
-            { theme: "outline", size: "medium" }
+            { theme: "outline", size: "medium", locale:'en'}
         )
-    })
+    });
 
     return (
         <div>

@@ -8,7 +8,7 @@ const itinerarySchema = new mongoose.Schema({
     price:{type:String,required: true},
     duration:{type:String,required: true},
     hashtags:{type:Array,required: true},
-    likes:[{type:mongoose.Types.ObjectId, ref:"users"}],
+    likes:{type:Array},
     comments: [{
         userId: {type:mongoose.Types.ObjectId, ref:'users'},
         comment: {type: String}      

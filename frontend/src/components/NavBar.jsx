@@ -123,7 +123,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                {user ? <Avatar alt="photoUser" src={user.user.photo} sx={{
+                {user ? <Avatar alt="photo" src={user.user?.photo} sx={{
                   width: '40px',
                   height: '40px',
                   display: 'flex',
@@ -163,9 +163,9 @@ const NavBar = () => {
             >
               {user ? (
                 <Box>
-                  <LinkRouter to={`/profile/${user.user.id}`}>
+                  <LinkRouter to={`/profile/${user.user?.id}`}>
                     <MenuItem sx={{'&:hover': {bgcolor: 'rgb(224,224,224)'}}} onClick={handleCloseUserMenu}>
-                      <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: 'rgb(2,0,3)'}}>{user.user.firstName.charAt(0).toUpperCase()+user.user.firstName.slice(1).toLowerCase()}</Typography>
+                      <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: 'rgb(2,0,3)'}}>{user.user?.firstName.charAt(0).toUpperCase()+user.user?.firstName.slice(1).toLowerCase()}</Typography>
                     </MenuItem>
                   </LinkRouter>
                   <MenuItem sx={{'&:hover': {bgcolor: 'rgb(224,224,224)'}}} onClick={handleCloseUserMenu}>

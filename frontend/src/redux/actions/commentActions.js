@@ -1,5 +1,6 @@
 import axios from "axios";
 import Swal from 'sweetalert2'
+import toast from 'react-hot-toast';
 
 const commentsActions = {
   addComment: (comments) => {
@@ -17,6 +18,10 @@ const commentsActions = {
             },
           }
         );
+        Swal.fire({
+          icon: "success",
+          title: res.data.message,
+        });
         dispatch({
           type: 'MESSAGE',
           payload: {
@@ -37,33 +42,76 @@ const commentsActions = {
         });
       }
     };
-  },
-
-  modifiComment: (id,comment) => {
+  }, 
+/* 
+  modifyComment: (comment) => {
     console.log(comment)
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token')
     return async (dispatch, getState) => {
+        try{
       const res = await axios.put(
-        `http://localhost:4000/api/tineraries/comment/${id}`,
-        {comment},
+        `http://localhost:4000/api/tineraries/comment/`,{...comment},
+       
         {
           headers: {
-            Authorization: `Bearer ${token}`,
-          },
+            'Authorization': 'Bearer '+token
+        }
         }
       );
+      toast.success(res.data.message)
+  
       dispatch({
-        type: 'MESSAGE',
+        type: 'message',
         payload: {
-          view: true,
-          message: res.data.message,
-          success: res.data.success,
-        },
-      });
+            view: true,
+            message: res.data.message,
+            success: res.data.success
+        }
+    })
 
-      return res;
-    };
-  },
+    return res
+
+}catch(err){
+    console.log(err)
+}
+
+}
+} , */
+
+
+modifyComment: (id, value) => {
+    
+  const token = localStorage.getItem("token");
+  return async (dispatch, getState) => {
+      console.log(id);
+  console.log(value);
+    const res = await axios.put(
+      `http://localhost:4000/api/tineraries/comment/${id}`,
+      {value},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    
+    console.log(res)
+  Swal.fire({
+    icon: "success",
+    title: res.data.message,
+  });
+    // dispatch({
+    //   type: 'MESSAGE',
+    //   payload: {
+    //     view: true,
+    //     message: res.data.message,
+    //     success: res.data.success,
+    //   },
+    // });
+
+    return res;
+  };
+},
   deleteComment: (id) => {
     const token = localStorage.getItem("token");
     return async (dispatch, getState) => {
@@ -76,6 +124,11 @@ const commentsActions = {
           },
         }
       );
+     /*  toast.success(res.data.message) */
+      Swal.fire({
+        icon: "success",
+        title: res.data.message,
+      });
       dispatch({
         type: 'MESSAGE',
         payload: {

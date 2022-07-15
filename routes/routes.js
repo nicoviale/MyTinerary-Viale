@@ -29,7 +29,7 @@ const itinerariesControllers = require ('../controllers/itinerariesControllers')
  const {getActivities,uploadActivity,deleteAct,modifyAct,oneActivity,findActFromTin} = activitiesControllers;
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItineraries, getItinerariesByCity,likeDislike} =itinerariesControllers;
 const commentControllers = require('../controllers/commentControllers');
-const{addComment,modifiComment,deleteComment} = require('../controllers/commentControllers');
+const{addComment,modifyComment,deleteComment} = require('../controllers/commentControllers');
 
 Router.route ('/itinerary')
 .get(getItineraries)
@@ -84,6 +84,6 @@ Router.route('/tineraries/comment')
 
 Router.route('/tineraries/comment/:id')
 .post(passport.authenticate('jwt', {session: false}), deleteComment)
-.put(passport.authenticate('jwt', {session: false}), modifiComment) 
+.put(passport.authenticate('jwt', {session: false}), modifyComment) 
 
 module.exports= Router

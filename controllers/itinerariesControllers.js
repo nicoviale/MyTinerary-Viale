@@ -130,37 +130,44 @@ const itinerarisControllers ={
             error: error
         })
     },
-    likeDislike: async (req,res) => {
-        //console.log(req)
-        let id = req.params.id 
-        /* console.log(req.params) */
-        let user = req.user.id
-        /* console.log(user) */
-        try { 
-            let tinerary = await Itinerary.findOne({_id:id})
-            console.log(tinerary) 
-            if (tinerary.likes.includes(user)) {
-                tinerary.likes.remove(user) 
-                await tinerary.save()
-                res.json({
-                    message:"You have just disliked this itinerary",
-                    success: true
-                })
-            } else {
-                tinerary.likes.push(user) 
-                await tinerary.save()
-                res.json({
-                    message:"You have just liked this itinerary",
-                    success: true
-                })
-            }
-        } catch (error) {
-            console.log(error)
-            res.json({
-                message: "error",
-                success: false,
+	likeDislike: async (req, res) => {
+		const id = req.params.id; //id del itinerario
+		const user = req.user.id;
+
+		await Itinerary.findOne({ _id: id }) //va a encontrar el itinerario que coincida con el id de la ciudad? corroborar
+			.then((itinirary) => {
+				console.log(itinirary);
+				if (itinirary.likes.includes(user)) {
+					//este if saca el like
+					Itinerary.findOneAndUpdate(
+						{ _id: id },
+						{ $pull: { likes: user } }, //$pull/saca/elimina metodo de mongo para manejo de datos
+						{ new: true } //nueva respuesta
+					)
+						.then((newItinierary) =>
+							res.json({
+								success: true,
+								response: newItinierary.likes,
+								message: `i do not like it anymore`,
+							})
+						)
+						.catch((error) => console.log(error));
+				} else {
+					Itinerary.findOneAndUpdate(
+						{ _id: id },
+						{ $push: { likes: user } }, //$push/agrega metodo de mongo para manejo de datos
+						{ new: true }
+					)
+						.then((newItinierary) =>
+							res.json({
+								success: true,
+								response: newItinierary.likes,
+								message: `Thanks for your like`,
+							})
+						)
+						.catch((error) => console.log(error));
+				}
             })
-        }
-    }, 
+    },
 }
 module.exports = itinerarisControllers

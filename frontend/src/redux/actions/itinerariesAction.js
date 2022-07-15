@@ -39,11 +39,11 @@ const itinerariesActions = {
         const token = localStorage.getItem('token')
         return async() => {
             try {
-                const answer = await axios.put(`http://localhost:4000/api/tineraries/likeDislike/${itineraryId}`,{},
+                const res = await axios.put(`http://localhost:4000/api/tineraries/likeDislike/${itineraryId}`,{},
                     {headers: {Authorization: "Bearer "+token}}
                 )
-                //console.log(answer.data.response)
-                return answer.data.response
+                /* console.log(res.data. */
+                return res
             }catch (err) {
                 console.log(err)
             }

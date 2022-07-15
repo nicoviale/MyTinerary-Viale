@@ -39,19 +39,21 @@ const userActions = {
     }
 },
 
-signInUser: (logedUser) => {
-    console.log(logedUser)
+signInUser: (data) => {
+    console.log(data)
     return async(dispatch, getState) => {
         try {
-            const res = await axios.post('http://localhost:4000/api/auth/signIn',{logedUser})
+            const res = await axios.post('http://localhost:4000/api/auth/signIn',{data})
             console.log(res)
             if (res.data.success) { //si es true
                 localStorage.setItem('token',res.data.response.token) //toma el token y lo manda la localstorage
                 console.log(localStorage.getItem('token'))
                 Swal.fire({
-                    icon:'error',
-                    title:'Error',
-                    text: res.data.message,
+                    position: 'top-center',
+                    icon: 'success',
+                    title: res.data.message,
+                    showConfirmButton: false,
+                    timer: 2500
                 })
                 dispatch({type: 'user', payload: res.data.response.userData})
             } else {
