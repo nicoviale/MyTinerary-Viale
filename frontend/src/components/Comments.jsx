@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react";
 import commentsActions from "../redux/actions/commentActions";
 import toast from 'react-hot-toast';
-/* import Comment from "./Commfdfsfsfsfsent" */
+import {Link as LinkRouter} from 'react-router-dom'
 
 
 function AddComment({ itinerario, setChangeReload, handleReload }) {
@@ -35,11 +35,11 @@ console.log(user)
     setItinerary(res.data.message.newCommet)
     inputTextElement.current.innerText = ""
     console.log(res)
-    if (res.success) {
+ /*    if{
       toast.success(res.data.message)
     } else {
       toast.error(res.data.message)
-    }
+    } */
     handleReload()
   }
 
@@ -91,9 +91,6 @@ console.log(user)
         {itinerario?.comments?.map(comment =>
           <div className="boxes" key={comment._id}>
 
-            {/* SI EL USUARIO NO ES EL QUE HIZO EL COMENTARIO */}
-            
-
               <div className="comments-container">
                 <div className="avatar-name">
                   <Stack direction="row" spacing={2}>
@@ -112,63 +109,31 @@ console.log(user)
                   {/* <p>{comment.comment}</p> */}
                   </div>
                   {console.log(comment)}
-                  {comment.userId?._id === user.user?.id ?
+                  {comment?.userId?._id === user.user?.id ?
                   
-                  (<div><button id={comment._id} onClick={()=>changeComment(comment._id)} className="call-button comment-button">EDIT✏️</button>
-                  <button onClick={() => deleteComment(comment._id)}  className="call-button comment-button">DELETE❌</button>
+                  (<div><button id={comment._id} onClick={()=>changeComment(comment._id)} className="call-button-comment-button">Edit✏️</button>
+                  <button onClick={() => deleteComment(comment._id)}  className="call-button-comment-button">Delete❌</button>
                   </div>)
                   :null
                 }
               </div>
-
-              
- 
-             {/*  <Comment comment={comment} setChangeReload={setChangeReload} /> */}
-
-            
           </div>
         )}
 
         <div className="comment-box" ref={inputTextElement} onInput={handleInputText} contentEditable suppressContentEditableWarning={true}></div>
 
       </div>
+      {user ?(
       <div className="comment-buttons">
-        <button onClick={addCommentUser} className="call-button comment-button">ADD✔️</button>
+        <button onClick={addCommentUser} className="call-buttonbutton">Add Comment✔️</button>
       </div>
-    </>
-
-  )
-}
+      ):
+  <div className="login-button-box">
+      <p className="invitation">Log in and post your comment! 
+      <LinkRouter className='logueo' to={'/SignIn'}> Sign in </LinkRouter> or
+      <LinkRouter className='logueo' to={'/SignUP'}> Sign up </LinkRouter></p>
+  </div>}
+  </>
+)}
 
 export default AddComment
-
-/* { CONDICION USUARIO LOGUEADO }
-
-  {user ?
-                    <>
-                        <div className="boxes">
-                            <div className="comments-container">
-                                <div className="avatar-name">
-                                <Stack direction="row" spacing={2}>
-                                    <Avatar
-                                        alt="Remy Sharp"
-                                        src={user.photo}
-                                        sx={{ width: 56, height: 56, margin: 2 }}
-                                    />
-                                </Stack>
-                                <div className="comment-author">{user.firstName} {user.lastName}</div>
-                                </div>
-
-
-
-
-
-
-
-                               
-                    </>
-                    :
-                    <div className="login-button-box">
-                        <p className="invitation"> LOG IN AND LEAVE US A COMMENT!! ✈️</p>
-                    </div>
-                } */

@@ -73,7 +73,7 @@ const commentsControllers = {
         try {
             const deleteComment = await Itinerary.findOneAndUpdate({"comments._id": id}, {$pull:{comments: {_id: id}}}, {new: true}).populate("comments.userId", {firstName:1, lastName:1, image:1})
             // console.log(deleteComment)
-            res.json({success: true, response: {deleteComment}, message: "Your comment has been deleted! 🗑️"})
+            res.json({success: true, response: {deleteComment}, message: "Your comment has been deleted!"})
         }
         catch(error) {
             console.log(error)

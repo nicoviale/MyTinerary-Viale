@@ -1,4 +1,4 @@
-import * as React from 'react'
+/* import * as React from 'react'
 import { useState } from 'react'
 import commentsAction from '../Redux/action/commentActions'
 import { useDispatch } from 'react-redux'
@@ -96,4 +96,4 @@ return (
 }
 
 
-export default Comment
+export default Comment */

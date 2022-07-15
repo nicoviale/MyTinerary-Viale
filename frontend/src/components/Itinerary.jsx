@@ -125,7 +125,7 @@ function Itinerary({ setChangeReload }) {
 
             {user ?
           <IconButton onClick={()=>likesOrDislikes(data._id)} aria-label="add to favorites">
-            {data?.likes.includes(user.user.id) ?
+            {data?.likes.includes(user.user?.id) ?
               <FavoriteIcon style={{ color: 'red' }} />
               :
               <FavoriteBorderIcon />}
